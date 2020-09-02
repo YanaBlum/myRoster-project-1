@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./font-awesome/css/font-awesome.css" >
+  <link rel="stylesheet" href="style.css">
+  <title>myroster project</title>
+</head>
+<body>
+  <div id="search-container">
+    <input id="input" type="text" placeholder="Team Name"> 
+    <button id="getRoster">GET ROSTER</button>
+  </div>
+  
+  <div id="roster"></div>
+  <script id="roster-template" type="text/x-hanlebars-template">
+    {{#each roster}}
+    <div class="player">
+      <p class="name">{{firstName}} {{lastName}}</p>
+      <p class="number"> {{jersey}}</p>
+      <div class="player-image">
+        <img
+        src="{{img}}"
+        onerror="this.src ='https://www.albawaba.com/sites/default/files/2020-04/nba%20logo.jpeg' "
+        >
+      </div>
+      <p class="pos"> {{pos}}</p>
+    </div>
+    {{/each}}
+  </script>
+
+  
+  <script src="./jquery/dist/jquery.js"></script>
+  <script src="./handlebars/dist/handlebars.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
